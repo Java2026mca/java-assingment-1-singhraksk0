@@ -4,47 +4,43 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        def hollow_diamond(n):
-    # Upper half including middle
-    for i in range(n):
-        # Leading spaces
-        print(" " * (n - i - 1), end="")
-        # First star
-        print("*", end="")
-        if i > 0:
-            # Inner spaces
-            print(" " * (2 * i - 1), end="")
-            # Second star
-            print("*", end="")
-        print()  # Newline
 
-    # Lower half
-    for i in range(n - 2, -1, -1):
-        print(" " * (n - i - 1), end="")
-        print("*", end="")
-        if i > 0:
-            print(" " * (2 * i - 1), end="")
-            print("*", end="")
-        print()
+        // Upper part
+        for (int i = 1; i <= n; i++) {
 
-# Example usage:
-hollow_diamond(4)
+            // spaces before
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
 
-        // TODO: Print a hollow diamond pattern of half-height n using '*'
-        //
-        // Rules:
-        //   - Only border cells have '*', inside is spaces
-        //   - No trailing spaces on any line
-        //
-        // Input: 4
-        // Output:
-        //    *
-        //   * *
-        //  *   *
-        // *     *
-        //  *   *
-        //   * *
-        //    *
+            // hollow stars
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                if (j == 1 || j == 2 * i - 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
 
+            System.out.println();
+        }
+
+        // Lower part
+        for (int i = n - 1; i >= 1; i--) {
+
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                if (j == 1 || j == 2 * i - 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+
+            System.out.println();
+        }
     }
 }
