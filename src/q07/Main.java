@@ -24,7 +24,7 @@ public class Main {
                 }
             }
         }
-        
+      
         // Print sorted array ascending, space-separated
         for (int i = 0; i < n; i++) {
             System.out.print(arr[i]);
