@@ -17,7 +17,6 @@ public class Main {
                 matrix[top][i] = num++;
             }
             top++;
-
             // top → bottom
             for (int i = top; i <= bottom; i++) {
                 matrix[i][right] = num++;
